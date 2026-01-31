@@ -1,72 +1,85 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Luss Cottage – Guest Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0 16px;
       background: #f7f7f7;
-      color: #333;
+      color: #222;
     }
-    h1 {
+
+    h1, h2 {
       text-align: center;
     }
+
     .menu {
+      max-width: 600px;
+      margin: 24px auto;
       display: grid;
-      grid-template-columns: 1fr;
       gap: 12px;
-      max-width: 500px;
-      margin: 30px auto;
     }
-    .menu a {
+
+    .menu a,
+    .back {
       display: block;
-      padding: 15px;
+      text-align: center;
+      padding: 14px;
       background: #ffffff;
       border-radius: 8px;
-      text-align: center;
       text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      border: 1px solid #ddd;
+      color: #000;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .menu a:hover {
-      background: #eee;
+
+    section {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .back {
+      margin-top: 24px;
     }
   </style>
 </head>
+
 <body>
 
-<h1>Luss Cottage</h1>
-<p style="text-align:center;">Guest Guide</p>
+  <h1>Luss Cottage</h1>
+  <p style="text-align:center;">Guest Guide</p>
 
-<div class="menu">
-  <a href="#arrival">Arrival & Access</a>
-  <a href="#heating">Heating, Hot Water & Wi-Fi</a>
-  <a href="#house">Using the House</a>
-  <a href="#sauna">Sauna, Hot Tub & Fires</a>
-  <a href="#safety">Safety & Emergencies</a>
-</div>
+  <!-- MENU -->
+  <div class="menu" id="menu">
+    <a href="#arrival">Arrival & Address</a>
+    <a href="#keys">Key Access</a>
+    <a href="#house">Using the House</a>
+    <a href="#spa">Sauna, Hot Tub & Fires</a>
+    <a href="#kitchen">Kitchen & Appliances</a>
+    <a href="#bins">Bins & Recycling</a>
+    <a href="#checkout">Check-out</a>
+    <a href="#local">Local Area & Eating Out</a>
+    <a href="#safety">Safety & Emergencies</a>
+  </div>
 
-<hr>
+  <!-- SECTIONS -->
 
-<h2 id="arrival">Arrival & Access</h2>
-<p><a href="#">⬅ Return to Menu</a></p>
+  <section id="arrival">
+    <h2>Arrival & Address</h2>
+    <p>Content coming next.</p>
+    <a href="#menu" class="back">⬅ Back to Menu</a>
+  </section>
 
-<h2 id="heating">Heating, Hot Water & Wi-Fi</h2>
-<p><a href="#">⬅ Return to Menu</a></p>
-
-<h2 id="house">Using the House</h2>
-<p><a href="#">⬅ Return to Menu</a></p>
-
-<h2 id="sauna">Sauna, Hot Tub & Fires</h2>
-<p><a href="#">⬅ Return to Menu</a></p>
-
-<h2 id="safety">Safety & Emergencies</h2>
-<p><a href="#">⬅ Return to Menu</a></p>
-
-</body>
-</html>
+  <section id="keys">
+    <h2>Key Access</h2>
+    <p>Content coming next.</p>
+    <a href="#menu" class="back">⬅ Back to Menu</a>

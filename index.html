@@ -12,7 +12,6 @@
   overflow: hidden;
 }
 
-  
 .lightbox {
   position: fixed;
   inset: 0;
@@ -20,10 +19,15 @@
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 99999;
+}
+
+.lightbox * {
+  pointer-events: none;
 }
 
 .lightbox-content {
+  pointer-events: auto;
   max-width: 90vw;
   max-height: 90vh;
   text-align: center;
@@ -39,8 +43,8 @@
   color: #fff;
   margin-top: 12px;
   font-size: 0.95em;
-  line-height: 1.4;
 }
+
 
 .Blue-box {
   border-left: 4px solid #2171b7;
@@ -656,7 +660,6 @@ Please message us through the original booking platform.
     <p id="lightbox-caption"></p>
   </div>
 </div>
-
 
 <script>
 function openLightbox(img) {

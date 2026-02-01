@@ -38,6 +38,31 @@
   margin-top: 6px;
 }
 
+.carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+
+.carousel figure {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.carousel figcaption {
+  font-size: 0.85em;
+  margin-top: 6px;
+  color: #555;
+}
 
 .warning-box {
   border-left: 4px solid #f4c430;

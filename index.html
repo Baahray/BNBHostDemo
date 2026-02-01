@@ -7,6 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 8px;
+}
 
 .Blue-box {
   border-left: 4px solid #2171b7;
@@ -356,22 +372,22 @@ need more.</p>
 
 <div class="carousel">
   <figure>
-    <img src="Images/LOGBURNER1.png" alt="Log burner">
+    <img src="Images/LOGBURNER1.png" alt="Log burner" onclick="openLightbox(this)">
     <figcaption>Log burner in the living area</figcaption>
   </figure>
 
   <figure>
-    <img src="Images/LOGS1.png" alt="Logs">
+    <img src="Images/LOGS1.png" alt="Logs" onclick="openLightbox(this)">
     <figcaption>Logs for the fire</figcaption>
   </figure>
 
   <figure>
-    <img src="Images/FIRELIGHTER1.png" alt="Firelighters">
+    <img src="Images/FIRELIGHTER1.png" alt="Firelighters" onclick="openLightbox(this)">
     <figcaption>Firelighters provided</figcaption>
   </figure>
 
   <figure>
-    <img src="Images/FARMSHOP1.png" alt="Farm shop">
+    <img src="Images/FARMSHOP1.png" alt="Farm shop" onclick="openLightbox(this)">
     <figcaption>Local farm shop for extra supplies</figcaption>
   </figure>
 </div>
@@ -629,6 +645,24 @@ Please message us through the original booking platform.
     Logs and firelighters can be purchased locally if needed.
   </p>
 </div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" alt="">
+</div>
+
+<script>
+function openLightbox(img) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  lightboxImg.src = img.src;
+  lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>

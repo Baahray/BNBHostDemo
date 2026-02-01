@@ -6,13 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    .icon {
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-  opacity: 0.75;
-}
-
+    /* BASE */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -27,26 +21,35 @@
 
     h3 {
       margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ICONS */
+    .icon {
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+      flex-shrink: 0;
     }
 
     /* MENU BUTTONS */
-.menu {
-  max-width: 700px;
-  margin: 24px auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
+    .menu {
+      max-width: 700px;
+      margin: 24px auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
 
-@media (min-width: 768px) {
-  .menu {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+    @media (min-width: 768px) {
+      .menu {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
     .menu a {
-      display: block;
       text-align: center;
       padding: 14px;
       background: #ffffff;
@@ -57,6 +60,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    /* SECTIONS */
     section {
       max-width: 700px;
       margin: 60px auto;
@@ -79,6 +83,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    /* DETAILS / SUMMARY */
     details {
       margin-top: 12px;
     }
@@ -86,7 +91,26 @@
     summary {
       cursor: pointer;
       font-weight: bold;
-      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .icon-open {
+      display: none;
+    }
+
+    details[open] .icon-closed {
+      display: none;
+    }
+
+    details[open] .icon-open {
+      display: inline-block;
     }
   </style>
 </head>
@@ -108,91 +132,117 @@
     <a href="#departure">Departure</a>
   </div>
 
-  <!-- ARRIVAL SECTION -->
+  <!-- ARRIVAL -->
   <section id="arrival">
     <h2>Arrival & Check-in</h2>
 
-   <p style="text-align:center;"><h3>📍 Address</h3>
-    
+    <h3>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12" />
+      </svg>
+      Address
+    </h3>
+
+    <p>
       <strong>Oakbank Cottage</strong><br>
       Luss<br>
       Alexandria<br>
       G83 8RH
     </p>
 
-    <h3>🧭 Directions</h3>
+    <h3>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25" />
+      </svg>
+      Directions
+    </h3>
+
     <details>
-      <summary>Tap to view detailed directions</summary>
+      <summary>
+        View detailed directions
+        <span>
+          <svg class="icon icon-closed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 9l9 9 9-9" />
+          </svg>
+          <svg class="icon icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 15l-9-9-9 9" />
+          </svg>
+        </span>
+      </summary>
 
       <p>
-        You will be travelling via the A82. Please note that Google Maps does not
-        always pinpoint the exact location of the cottage.
+        The cottage is accessed via the A82. Google Maps does not always pinpoint the
+        exact location.
       </p>
 
       <p>
-        If travelling from the Glasgow direction, we recommend entering
-        <strong>Luss Estates, G83 8RH</strong> into Google Maps.
+        If travelling from Glasgow, enter <strong>Luss Estates, G83 8RH</strong> into Google Maps.
       </p>
 
       <p>
-        Continue past the green <strong>Luss Estates</strong> sign. Just under
-        one kilometre later, take the very first left turn. There is a tall tree
-        at this turning which we find helpful as a landmark.
+        Continue past the green Luss Estates sign. Just under one kilometre later,
+        take the first left. A tall tree marks the turning.
       </p>
 
       <p>
-        Once on the private road, you will see a gate. Please open and close this
-        gate when entering and leaving the property.
+        Open and close the gate on the private road when entering and leaving.
       </p>
 
       <p>
-        You will see a cottage directly ahead. Turn right — Oakbank Cottage is
-        the next cottage up. There are only two cottages on this road.
+        Turn right at the cottage ahead — Oakbank Cottage is the next property.
       </p>
     </details>
 
-    <h3>🚗 Parking</h3>
+    <h3>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5h18" />
+      </svg>
+      Parking
+    </h3>
+
     <p>
-      Parking is available outside the cottage. However, we recommend using the
-      driveway at the very end of the road.
+      Parking is available outside the cottage. We recommend using the driveway at
+      the end of the road.
     </p>
 
     <p>
-      To access the driveway, lift the latch to open the long metal gate. Please
-      remember to close this gate in the evening, as deer frequently enter the
-      area.
+      The driveway is narrow and sloped. Please take care, particularly when reversing.
     </p>
+
+    <h3>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3" />
+      </svg>
+      Key & Entry
+    </h3>
 
     <p>
-      The driveway is narrow and on a slope. Please take care, especially when
-      reversing.
+      The key box is located at the entrance. The code is <strong>2016</strong>.
     </p>
 
-    <h3><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
-</svg>
- Key & Entry</h3>
+    <h3>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5" />
+      </svg>
+      Check-in Time
+    </h3>
+
     <p>
-      There is a key box on the wall at the cottage entrance, the code is <strong>2016</strong>
+      Check-in is from <strong>4:00 pm</strong>.<br>
+      Early check-in may be possible — please message us on the day of arrival.
     </p>
 
-    <h3>⏰ Check-in Time</h3>
-    <p>
-      Check-in time is 4pm.<br>
-      We might be able to arrange an check-in, please message on the day of your arrival and we will let you know when it is ready.
-    </p>
-
-    <a href="#menu" class="back">⬅ Back to Menu</a>
+    <a href="#menu" class="back">Back to Menu</a>
   </section>
 
-  <!-- PLACEHOLDER SECTIONS -->
-  <section id="house"><h2>House Essentials</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
-  <section id="spa"><h2>Sauna & Hot Tub</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
-  <section id="kitchen"><h2>Kitchen</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
-  <section id="bathroom"><h2>Bathrooms</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
-  <section id="local"><h2>Local Area</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
-  <section id="safety"><h2>Safety</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
-  <section id="departure"><h2>Departure</h2><p>Content coming next.</p><a href="#menu" class="back">⬅ Back to Menu</a></section>
+  <!-- PLACEHOLDERS -->
+  <section id="house"><h2>House Essentials</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
+  <section id="spa"><h2>Sauna & Hot Tub</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
+  <section id="kitchen"><h2>Kitchen</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
+  <section id="bathroom"><h2>Bathrooms</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
+  <section id="local"><h2>Local Area</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
+  <section id="safety"><h2>Safety</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
+  <section id="departure"><h2>Departure</h2><p>Content coming next.</p><a href="#menu" class="back">Back to Menu</a></section>
 
 </body>
 </html>

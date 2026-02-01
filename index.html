@@ -638,22 +638,29 @@ Please message us through the original booking platform.
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" alt="">
+
+  <figure>
+    <img id="lightbox-img" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+
 </div>
+
 
 <script>
 function openLightbox(img) {
+  document.body.classList.add("no-scroll");
+
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  const caption = document.getElementById("lightbox-caption");
+
   lightboxImg.src = img.src;
+  caption.textContent = img.dataset.caption || "";
+
   lightbox.style.display = "flex";
-  document.body.classList.add("no-scroll");
 }
 
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-  document.body.classList.remove("no-scroll");
-}
 </script>
 
 </body>

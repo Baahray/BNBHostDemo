@@ -12,21 +12,34 @@
   overflow: hidden;
 }
 
-    
+  
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.85);
   display: none;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  z-index: 9999;
 }
 
-.lightbox img {
-  max-width: 95%;
-  max-height: 90%;
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+#lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
   border-radius: 8px;
+}
+
+#lightbox-caption {
+  color: #fff;
+  margin-top: 12px;
+  font-size: 0.95em;
+  line-height: 1.4;
 }
 
 .Blue-box {
@@ -638,19 +651,16 @@ Please message us through the original booking platform.
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-
-  <figure>
+  <div class="lightbox-content" onclick="event.stopPropagation()">
     <img id="lightbox-img" alt="">
-    <figcaption id="lightbox-caption"></figcaption>
-  </figure>
+    <p id="lightbox-caption"></p>
+  </div>
 
-</div>
+
 
 
 <script>
 function openLightbox(img) {
-  document.body.classList.add("no-scroll");
-
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const caption = document.getElementById("lightbox-caption");
@@ -658,9 +668,9 @@ function openLightbox(img) {
   lightboxImg.src = img.src;
   caption.textContent = img.dataset.caption || "";
 
+  document.body.classList.add("no-scroll");
   lightbox.style.display = "flex";
 }
-
 </script>
 
 </body>

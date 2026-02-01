@@ -8,6 +8,11 @@
 
   <style>
     
+    body.no-scroll {
+  overflow: hidden;
+}
+
+    
 .lightbox {
   position: fixed;
   inset: 0;
@@ -657,10 +662,12 @@ function openLightbox(img) {
   const lightboxImg = document.getElementById("lightbox-img");
   lightboxImg.src = img.src;
   lightbox.style.display = "flex";
+  document.body.classList.add("no-scroll");
 }
 
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
+  document.body.classList.remove("no-scroll");
 }
 </script>
 

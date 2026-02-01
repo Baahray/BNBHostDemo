@@ -22,20 +22,15 @@
   z-index: 99999;
 }
 
-.lightbox * {
-  pointer-events: none;
-}
-
 .lightbox-content {
-  pointer-events: auto;
   max-width: 90vw;
-  max-height: 90vh;
+  max-height: 85vh;
   text-align: center;
 }
 
 #lightbox-img {
   max-width: 100%;
-  max-height: 75vh;
+  max-height: 70vh;
   border-radius: 8px;
 }
 
@@ -43,6 +38,18 @@
   color: #fff;
   margin-top: 12px;
   font-size: 0.95em;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 32px;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 
@@ -394,7 +401,7 @@ need more.</p>
 
 <div class="carousel">
   <figure>
-    <img src="Images/LOGBURNER1.png" alt="Log burner" data-caption="in here" onclick="openLightbox(this)" onclick="closeLightbox(this)">
+    <img src="Images/LOGBURNER1.png" alt="Log burner" data-caption="in here yes" onclick="openLightbox(this)">
     <figcaption>Log burner in the living area</figcaption>
   </figure>
 
@@ -654,12 +661,15 @@ Please message us through the original booking platform.
 </svg> Back to Menu</a></section>
 
 <!-- Lightbox -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+
   <div class="lightbox-content">
     <img id="lightbox-img" alt="">
     <p id="lightbox-caption"></p>
   </div>
 </div>
+
 
 <script>
 function openLightbox(img) {
@@ -673,6 +683,12 @@ function openLightbox(img) {
   document.body.classList.add("no-scroll");
   lightbox.style.display = "flex";
 }
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+  document.body.classList.remove("no-scroll");
+}
+
 </script>
 
 </body>

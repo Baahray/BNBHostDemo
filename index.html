@@ -22,15 +22,20 @@
   z-index: 99999;
 }
 
+.lightbox * {
+  pointer-events: none;
+}
+
 .lightbox-content {
+  pointer-events: auto;
   max-width: 90vw;
-  max-height: 85vh;
+  max-height: 90vh;
   text-align: center;
 }
 
 #lightbox-img {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 75vh;
   border-radius: 8px;
 }
 
@@ -38,18 +43,6 @@
   color: #fff;
   margin-top: 12px;
   font-size: 0.95em;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  font-size: 32px;
-  line-height: 1;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
 }
 
 
@@ -274,7 +267,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
       </svg>
-      Address:
+      Address
     </h3>
 
     <p>
@@ -306,7 +299,7 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
 </svg>
 
-      Parking:
+      Parking
     </h3>
 
     <p>Parking is available outside the cottage. We recommend using the driveway at the end of the road.</p>
@@ -401,7 +394,7 @@ need more.</p>
 
 <div class="carousel">
   <figure>
-    <img src="Images/LOGBURNER1.png" alt="Log burner" data-caption="in here yes" onclick="openLightbox(this)">
+    <img src="Images/LOGBURNER1.png" alt="Log burner" data-caption="In here will be information about the image" onclick="openLightbox(this)">
     <figcaption>Log burner in the living area</figcaption>
   </figure>
 
@@ -661,19 +654,14 @@ Please message us through the original booking platform.
 </svg> Back to Menu</a></section>
 
 <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <div class="lightbox-content">
     <img id="lightbox-img" alt="">
     <p id="lightbox-caption"></p>
   </div>
 </div>
 
-
 <script>
-console.log("LIGHTBOX SCRIPT LOADED");
-
 function openLightbox(img) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -685,23 +673,7 @@ function openLightbox(img) {
   document.body.classList.add("no-scroll");
   lightbox.style.display = "flex";
 }
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-  document.body.classList.remove("no-scroll");
-}
-
 </script>
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox(); event.stopPropagation();">
-    &times;
-  </button>
-
-  <div class="lightbox-content">
-    <img id="lightbox-img" src="" alt="">
-    <div id="lightbox-caption"></div>
-  </div>
-</div>
 
 </body>
 </html>

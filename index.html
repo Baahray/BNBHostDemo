@@ -302,7 +302,7 @@
 
       <div class="carousel">
   <figure>
-    <img src="Images/A82 road.png" alt="A82" data-caption="The A82 towards Glasgow okkk ( add relevant info)" onclick="openLightbox(this)">
+    <img src="Images/A82road.png" alt="A82" data-caption="The A82 towards Glasgow okkk ( add relevant info)" onclick="openLightbox(this)">
     <figcaption>A82- add information</figcaption>
   </figure>
 
@@ -718,6 +718,16 @@ function closeLightbox() {
 }
 
 </script>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(); event.stopPropagation();">
+    &times;
+  </button>
+
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+  </div>
+</div>
 
 </body>
 </html>
